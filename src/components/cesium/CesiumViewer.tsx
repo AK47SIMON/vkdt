@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
-import * as Cesium from "cesium";
+import * as CesiumModule from "cesium";
 
-// Configure Cesium to work WITHOUT ion (open-source only)
-Cesium.Ion.defaultAccessToken = undefined as any;
+
 
 // Kenya bounding box
 const KENYA_BOUNDS = {
@@ -371,7 +370,12 @@ const CesiumViewer = ({ onLocationSelect, layers = defaultLayers, searchQuery }:
   useEffect(() => {
     if (!cesiumContainer.current || viewerRef.current) return;
 
+    const Cesium = (window as any).Cesium || CesiumModule;
+
     try {
+      // Configure Cesium to work WITHOUT ion (open-source only)
+      Cesium.Ion.defaultAccessToken = undefined as any;
+
       setLoadingStatus("Creating 3D viewer...");
       
       // Create viewer WITHOUT any Cesium Ion dependencies
