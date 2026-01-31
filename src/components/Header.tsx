@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Globe, Menu, X, ShieldCheck, Activity } from "lucide-react";
+import { Globe, Menu, X, ShieldCheck, Activity, Radio } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
@@ -9,9 +9,8 @@ const Header = () => {
   const navItems = [
     { label: "Dashboard", href: "#dashboard" },
     { label: "3D Globe", href: "#globe" },
-    { label: "Open Data", href: "#open-data" },
-    { label: "Knowledge", href: "#knowledge" },
-    { label: "Live Data", href: "#live-data" },
+    { label: "Real-Time Hub", href: "#realtime-hub" },
+    { label: "Urban Planner", href: "#impact-forecaster" },
     { label: "AI Analytics", href: "#ai-analytics" },
   ];
 
@@ -54,9 +53,9 @@ const Header = () => {
               <Activity className="w-3.5 h-3.5 text-primary animate-pulse" />
               <span className="text-[10px] text-primary font-bold uppercase tracking-wider">Live Sync</span>
             </div>
-            <Button variant="glow" size="sm" className="hidden sm:flex gap-2" onClick={() => document.getElementById('globe')?.scrollIntoView({ behavior: 'smooth' })}>
-              <Globe className="w-4 h-4" />
-              Launch 3D
+            <Button variant="glow" size="sm" className="hidden sm:flex gap-2" onClick={() => document.getElementById('realtime-hub')?.scrollIntoView({ behavior: 'smooth' })}>
+              <Radio className="w-4 h-4" />
+              Live Data
             </Button>
             <button
               className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors"
@@ -90,11 +89,11 @@ const Header = () => {
                 </a>
               ))}
               <Button variant="glow" size="sm" className="mt-2 w-full gap-2" onClick={() => {
-                document.getElementById('globe')?.scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('realtime-hub')?.scrollIntoView({ behavior: 'smooth' });
                 setIsMenuOpen(false);
               }}>
-                <Globe className="w-4 h-4" />
-                Launch 3D
+                <Radio className="w-4 h-4" />
+                Live Data
               </Button>
             </nav>
           </motion.div>

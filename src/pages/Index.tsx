@@ -17,6 +17,9 @@ import KenyaOpenDataAPI from "@/components/KenyaOpenDataAPI";
 import WebCrawlerKnowledge from "@/components/WebCrawlerKnowledge";
 import EconomicDashboard from "@/components/EconomicDashboard";
 import LabLauncher from "@/components/LabLauncher";
+import RealtimeDataHub from "@/components/RealtimeDataHub";
+import UrbanImpactForecaster from "@/components/UrbanImpactForecaster";
+import InteractiveSimulationDashboard from "@/components/InteractiveSimulationDashboard";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -79,6 +82,21 @@ const Index = () => {
         </section>
         <section id="environment">
           <EnvironmentalPanel />
+        </section>
+        
+        {/* Real-Time Data Hub - Live Streaming */}
+        <section id="realtime-hub">
+          <RealtimeDataHub />
+        </section>
+        
+        {/* Urban Development Impact Forecaster */}
+        <section id="impact-forecaster">
+          <UrbanImpactForecaster />
+        </section>
+        
+        {/* Interactive Simulation Dashboard */}
+        <section id="city-simulator">
+          <InteractiveSimulationDashboard />
         </section>
       </main>
       <Footer />
